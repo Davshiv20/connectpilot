@@ -1,0 +1,47 @@
+.container {
+  max-width: 72rem;
+  margin: 0 auto;
+  padding: 1.5rem;
+}
+
+.card {
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+  border-radius: 0.5rem;
+}
+
+.formGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+
+@media (min-width: 768px) {
+  .formGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.formSection {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.previewSection {
+  background-color: rgb(249 250 251);
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+}
+
+.previewTitle {
+  margin-bottom: 1rem;
+}
+
+.previewPlaceholder {
+  color: rgb(107 114 128);
+  font-style: italic;
+}
+
+.generateButton {
+  margin-top: 1.5rem;
+} 

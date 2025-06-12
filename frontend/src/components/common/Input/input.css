@@ -1,0 +1,28 @@
+.textarea-container {
+    width: 100%;
+    position: relative;
+  }
+  
+  .copy-icon {
+    position: absolute;
+    bottom: 16px;
+    right: 16px;
+    cursor: pointer;
+  }
+  
+  .copy-icon:hover {
+    opacity: 0.8;
+  }
+  
+  .helper-text {
+    margin-top: 4px;
+    font-size: 14px;
+  }
+  
+  .helper-text.error {
+    color: #ff4d4f;
+  }
+  
+  .helper-text.default {
+    color: #666;
+  }
