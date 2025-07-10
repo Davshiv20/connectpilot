@@ -88,7 +88,7 @@ export const MessageForm: React.FC = () => {
             company: sanitizeCompanyName(values.company),
             role: values.role,
             jobId: values.jobId,
-            platform: template.platform,
+            platform: template.category,
             createdAt: new Date().toISOString(),
             status: 'draft' as const,
         };

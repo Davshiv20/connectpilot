@@ -2,11 +2,10 @@ export interface MessageTemplate {
     id: string;
     name: string;
     content: string;
-    variables: string[]; // e.g., ["{name}", "{company}", "{role}"]
+    variables: string[];
     category: 'email' | 'linkedin' | 'other';
     createdAt: string;
     updatedAt: string;
-    platform: 'email' | 'linkedin' | 'other';
 }
 
 export interface GeneratedMessage extends MessageFormData {
@@ -22,7 +21,6 @@ export interface MessageFormData {
     company: string;
     jobId: string;
     role: string;
-    platform: 'email' | 'linkedin' | 'other';
 }
 
 export interface FormValues {
@@ -32,13 +30,11 @@ export interface FormValues {
     role: string;
 }
 
-export type Platform = 'email' | 'linkedin' | 'other';
 
 export interface Template {
     id: string;
     name: string;
     content: string;
-    platform: 'email' | 'linkedin' | 'other';
 }
 
 // Redux state interfaces

@@ -11,7 +11,7 @@ const sampleTemplates: MessageTemplate[] = [
 I noticed you work at {company} and I'm very interested in the {role} position (Job ID: {jobId}). I've applied through your careers portal and would love to connect to learn more about the role and team.
 
 Best regards,
-[Your name]`,
+{name}`,
     variables: ['{name}', '{company}', '{role}', '{jobId}'],
     category: 'linkedin',
     createdAt: new Date().toISOString(),
@@ -27,7 +27,7 @@ I recently applied for the {role} position at {company} (Job ID: {jobId}) and wa
 I would appreciate any information about the next steps in the hiring process.
 
 Best regards,
-[Your name]`,
+{name}`,
     variables: ['{name}', '{company}', '{role}', '{jobId}'],
     category: 'email',
     createdAt: new Date().toISOString(),

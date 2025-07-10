@@ -9,14 +9,13 @@ function App() {
   const navigate = useNavigate();
 
   return (
-    <Layout className="min-h-screen bg-gray-50">
-      <Header className="flex items-center px-4 bg-white shadow-md">
-        
+    <>
+      <div style={{ border: '2px' , padding: '8px' }}>
         <Menu
           mode="horizontal"
           defaultSelectedKeys={['1']}
           onClick={({ key }) => navigate(key)}
-          className="flex-1 border-none"
+          style={{ flex: 1 }}
           items={[
             { key: ROUTES.MAIN, label: 'Message Generator' },
             { key: ROUTES.TEMPLATES, label: 'Templates' },
@@ -24,22 +23,22 @@ function App() {
             { key: ROUTES.SETTINGS, label: 'Settings' },
           ]}
         />
-      </Header>
-      <Content className="p-6 max-w-4xl mx-auto w-full">
+      </div>
+      <Content style={{ padding: '24px', maxWidth: '896px', margin: '0 auto', width: '100%' }}>
         <Routes>
           <Route path={ROUTES.MAIN} element={<MessageForm />} />
           <Route path={ROUTES.TEMPLATES} element={
-            <div className="bg-white p-6 rounded-lg shadow">Templates Page (Coming Soon)</div>
+            <div style={{ backgroundColor: 'white', padding: '24px', borderRadius: '8px', boxShadow: '0 1px 3px rgba(0,0,0,0.1)' }}>Templates Page (Coming Soon)</div>
           } />
           <Route path={ROUTES.HISTORY} element={
-            <div className="bg-white p-6 rounded-lg shadow">History Page (Coming Soon)</div>
+            <div style={{ backgroundColor: 'white', padding: '24px', borderRadius: '8px', boxShadow: '0 1px 3px rgba(0,0,0,0.1)' }}>History Page (Coming Soon)</div>
           } />
           <Route path={ROUTES.SETTINGS} element={
-            <div className="bg-white p-6 rounded-lg shadow">Settings Page (Coming Soon)</div>
+            <div style={{ backgroundColor: 'white', padding: '24px', borderRadius: '8px', boxShadow: '0 1px 3px rgba(0,0,0,0.1)' }}>Settings Page (Coming Soon)</div>
           } />
         </Routes>
       </Content>
-    </Layout>
+    </>
   );
 }
 

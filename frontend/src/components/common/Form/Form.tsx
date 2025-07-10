@@ -17,22 +17,26 @@ export const Form: React.FC<FormProps> = ({
   children,
   ...props
 }) => {
-  const formClasses = classNames(
-    {
-      'space-y-4': spacing === 'normal',
-      'space-y-2': spacing === 'compact',
-      'space-y-6': spacing === 'relaxed',
-    },
-    className
-  );
+  const getSpacingStyle = () => {
+    switch (spacing) {
+      case 'compact':
+        return { gap: '8px' };
+      case 'relaxed':
+        return { gap: '24px' };
+      default:
+        return { gap: '16px' };
+    }
+  };
 
   return (
-    <AntForm
-      className={formClasses}
-      {...props}
-    >
-      {children}
-    </AntForm>
+    <div style={{ display: 'flex', flexDirection: 'column', ...getSpacingStyle() }}>
+      <AntForm
+        className={className}
+        {...props}
+      >
+        {children}
+      </AntForm>
+    </div>
   );
 };
 
@@ -42,16 +46,10 @@ export const FormItem: React.FC<FormItemProps> = ({
   children,
   ...props
 }) => {
-  const itemClasses = classNames(
-    {
-      'w-full': fullWidth,
-    },
-    className
-  );
-
   return (
     <AntForm.Item
-      className={itemClasses}
+      className={className}
+      style={{ width: fullWidth ? '100%' : undefined }}
       {...props}
     >
       {children}

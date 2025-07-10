@@ -8,9 +8,9 @@ const { Header, Content, Footer } = Layout;
 
 const MainLayout: React.FC = () => {
     return (
-        <Layout className="min-h-screen">
-            <Header className="flex items-center">
-                <div className="text-white text-xl font-bold mr-8">MoodTracker</div>
+        <Layout style={{ minHeight: '100vh' }}>
+            <Header style={{ display: 'flex', alignItems: 'center' }}>
+                <div style={{ color: 'white', fontSize: '20px', fontWeight: 'bold', marginRight: '32px' }}>ConnectPilot</div>
                 <Menu
                     theme="dark"
                     mode="horizontal"
@@ -34,12 +34,12 @@ const MainLayout: React.FC = () => {
                     ]}
                 />
             </Header>
-            <Content className="p-6">
-                <div className="bg-white p-6 rounded-lg min-h-[80vh]">
+            <Content style={{ padding: '24px' }}>
+                <div style={{ backgroundColor: 'white', padding: '24px', borderRadius: '8px', minHeight: '80vh' }}>
                     <Outlet />
                 </div>
             </Content>
-            <Footer className="text-center">
+            <Footer style={{ textAlign: 'center' }}>
                 MoodTracker ©{new Date().getFullYear()}
             </Footer>
         </Layout>

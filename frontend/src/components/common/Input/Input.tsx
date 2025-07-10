@@ -24,25 +24,25 @@ export const Input: React.FC<CustomInputProps> = ({
   ...props
 }) => {
   const inputClasses = classNames(
-    'transition-all duration-200',
     {
-      'border-red-500 hover:border-red-600 focus:border-red-600': error,
+      'input-error': error,
     },
     className
   );
 
   return (
-    <div className="w-full">
+    <div style={{ width: '100%' }}>
       <AntInput
         className={inputClasses}
         status={error ? 'error' : undefined}
         {...props}
       />
       {helperText && (
-        <p className={classNames(
-          'mt-1 text-sm',
-          error ? 'text-red-500' : 'text-gray-500'
-        )}>
+        <p style={{ 
+          marginTop: '4px', 
+          fontSize: '14px',
+          color: error ? '#ff4d4f' : '#666'
+        }}>
           {helperText}
         </p>
       )}

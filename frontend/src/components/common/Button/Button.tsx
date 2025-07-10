@@ -13,27 +13,42 @@ export const Button: React.FC<CustomButtonProps> = ({
   fullWidth = false,
   className,
   children,
+  style,
   ...props
 }) => {
   const buttonClasses = classNames(
-    'transition-all duration-200',
     {
-      'w-full': fullWidth,
-      'bg-blue-600 hover:bg-blue-700 text-white border-none': buttonType === 'primary',
-      // Secondary variant
-      'bg-gray-100 hover:bg-gray-200 text-gray-800 border-none': buttonType === 'secondary',
-      // Outline variant
-      'bg-transparent hover:bg-gray-50 text-blue-600 border-blue-600': buttonType === 'outline',
-      // Text variant
-      'bg-transparent hover:bg-gray-50 text-blue-600 border-none': buttonType === 'text',
+      'button-full-width': fullWidth,
     },
     className
   );
 
+  const buttonStyle = {
+    width: fullWidth ? '100%' : undefined,
+    ...style
+  };
+
+  // Map buttonType to Ant Design button types
+  const getButtonType = () => {
+    switch (buttonType) {
+      case 'primary':
+        return 'primary';
+      case 'secondary':
+        return 'default';
+      case 'outline':
+        return 'default';
+      case 'text':
+        return 'text';
+      default:
+        return 'primary';
+    }
+  };
+
   return (
     <AntButton
-      type={buttonType === 'primary' ? 'primary' : 'default'}
+      type={getButtonType()}
       className={buttonClasses}
+      style={buttonStyle}
       {...props}
     >
       {children}

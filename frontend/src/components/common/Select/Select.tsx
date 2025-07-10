@@ -15,25 +15,26 @@ export const Select = <T extends any>({
   ...props
 }: SelectProps<T>) => {
   const selectClasses = classNames(
-    'transition-all duration-200 w-full',
     {
-      'border-red-500 hover:border-red-600': error,
+      'select-error': error,
     },
     className
   );
 
   return (
-    <div className="w-full">
+    <div style={{ width: '100%' }}>
       <AntSelect
         className={selectClasses}
         status={error ? 'error' : undefined}
+        style={{ width: '100%' }}
         {...props}
       />
       {helperText && (
-        <p className={classNames(
-          'mt-1 text-sm',
-          error ? 'text-red-500' : 'text-gray-500'
-        )}>
+        <p style={{ 
+          marginTop: '4px', 
+          fontSize: '14px',
+          color: error ? '#ff4d4f' : '#666'
+        }}>
           {helperText}
         </p>
       )}
